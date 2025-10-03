@@ -12,11 +12,19 @@ DETAIL_URL_TEMPLATE = f"{BASE_URL}/Details/{{id}}/{{slug}}"
 PDF_DOWNLOAD_URL_TEMPLATE = f"{BASE_URL}/Download/{{id}}/{{filename}}"
 
 # Search parameters
+# Regulation types (jenis):
+# 19 = Peraturan Daerah (Perda)
+# 20 = Peraturan Gubernur
+# 23 = Peraturan Bupati/Walikota
+# 30 = Keputusan
+# To scrape only specific types, modify JENIS_TYPES below
+JENIS_TYPES = ["20", "23", "30"]  # List of regulation types to scrape
+
 SEARCH_PARAMS = {
     "keywords": "",
     "tentang": "",
     "nomor": "",
-    "jenis": "19",  # Perda type
+    "jenis": JENIS_TYPES,  # Multiple regulation types
     "p": 1  # BPK uses 'p' not 'page' for pagination
 }
 

@@ -59,8 +59,7 @@ class BPKScraper(BaseScraper):
         """Get total number of pages from the website"""
         try:
             session = self.get_session()
-            params = SEARCH_PARAMS.copy()
-            params['p'] = 1
+            params = self._build_search_params(1)
 
             response = session.get(self.search_url, params=params, timeout=REQUEST_TIMEOUT)
             response.raise_for_status()
@@ -84,12 +83,31 @@ class BPKScraper(BaseScraper):
             self.error_logger.error(f"Error getting total pages: {e}")
             return EXPECTED_TOTAL_PAGES
 
+    def _build_search_params(self, page_num: int) -> list:
+        """Build search parameters with multiple jenis values"""
+        # Build list of tuples for multiple jenis parameters
+        params = [
+            ('keywords', SEARCH_PARAMS['keywords']),
+            ('tentang', SEARCH_PARAMS['tentang']),
+            ('nomor', SEARCH_PARAMS['nomor']),
+        ]
+
+        # Add multiple jenis parameters
+        jenis_list = SEARCH_PARAMS['jenis']
+        if isinstance(jenis_list, list):
+            for jenis in jenis_list:
+                params.append(('jenis', jenis))
+        else:
+            params.append(('jenis', jenis_list))
+
+        params.append(('p', page_num))
+        return params
+
     def parse_page(self, page_num: int) -> list:
         """Parse a single page and return list of regulations"""
         try:
             session = self.get_session()
-            params = SEARCH_PARAMS.copy()
-            params['p'] = page_num
+            params = self._build_search_params(page_num)
 
             # Add delay
             time.sleep(random.uniform(*DELAY_BETWEEN_REQUESTS))
