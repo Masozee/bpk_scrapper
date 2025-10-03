@@ -1,0 +1,23 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python:*)",
+      "WebFetch(domain:peraturan.bpk.go.id)",
+      "Bash(curl -s \"https://peraturan.bpk.go.id/Search?keywords=&tentang=&nomor=&jenis=19\" -H \"User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36\")",
+      "Bash(curl -s \"https://peraturan.bpk.go.id/Search?keywords=&tentang=&nomor=&jenis=19&page=1\" -H \"User-Agent: Mozilla/5.0\")",
+      "Read(//e/**)",
+      "Bash(find:*)",
+      "Bash(cd:*)",
+      "Bash(del:*)",
+      "Bash(curl -s \"https://peraturan.bpk.go.id/Search?keywords=&tentang=&nomor=&jenis=19&page=50\" -H \"User-Agent: Mozilla/5.0\")",
+      "Bash(curl -s \"https://peraturan.bpk.go.id/Search?keywords=&tentang=&nomor=&jenis=19&p=1\" -H \"User-Agent: Mozilla/5.0\")",
+      "Bash(curl -s \"https://peraturan.bpk.go.id/Search?keywords=&tentang=&nomor=&jenis=19&p=2\" -H \"User-Agent: Mozilla/5.0\")",
+      "Bash(curl -s \"https://peraturan.bpk.go.id/Search?keywords=&tentang=&nomor=&jenis=19&p=5\" -H \"User-Agent: Mozilla/5.0\")",
+      "Bash(timeout:*)",
+      "Bash(dir:*)",
+      "Bash(pip install:*)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}

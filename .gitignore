@@ -1,0 +1,47 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+venv/
+env/
+ENV/
+*.egg-info/
+dist/
+build/
+
+# Project specific
+database/
+*.db
+*.sqlite
+*.sqlite3
+*.db-journal
+docs/
+archive/
+*.zip
+*.rar
+*.7z
+*.tar
+*.tar.gz
+logs/*.log
+scraping_state_*.json
+bpk_scraping.log
+nohup.out
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Temp files
+*.tmp
+*.bak
+nul
