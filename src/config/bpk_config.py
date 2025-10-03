@@ -31,7 +31,7 @@ SEARCH_PARAMS = {
 # Scraping parameters
 ITEMS_PER_PAGE = 10
 MIN_ITEMS_PER_PAGE = 8  # Lower threshold due to fewer items per page
-EXPECTED_TOTAL_PAGES = 5893  # Approximate, may change
+EXPECTED_TOTAL_PAGES = 18160  # Total pages for jenis=20,23,30 (verified 2025-10-03)
 
 # Default scraper settings (more conservative for BPK)
 DEFAULT_WORKERS = 10  # Lower to avoid rate limiting

@@ -15,7 +15,8 @@
       "Bash(curl -s \"https://peraturan.bpk.go.id/Search?keywords=&tentang=&nomor=&jenis=19&p=5\" -H \"User-Agent: Mozilla/5.0\")",
       "Bash(timeout:*)",
       "Bash(dir:*)",
-      "Bash(pip install:*)"
+      "Bash(pip install:*)",
+      "Bash(curl -s \"https://peraturan.bpk.go.id/Search?keywords=&tentang=&nomor=&jenis=20&jenis=23&jenis=30&p=1\" -H \"User-Agent: Mozilla/5.0\")"
     ],
     "deny": [],
     "ask": []
